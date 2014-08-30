@@ -552,7 +552,16 @@ class MediawikerShowPageCommand(sublime_plugin.TextCommand):
         is_writable, text = mw_get_page_text(sitecon, title)
         if is_writable and not text:
             sublime.status_message('Wiki page %s is not exists. You can create new..' % (title))
-            text = '<New wiki page: Remove this with text of the new page>'
+            text = '''This document outlines the procedure needed to set up AutoFS, a package that provides support for automounting removable media or network shares when they are inserted or accessed.
+
+== Installation ==
+
+== Configuration ==
+
+== Troubleshooting and tweaks ==
+
+== See also ==
+'''
         if is_writable:
             self.view.erase(edit, sublime.Region(0, self.view.size()))
             self.view.set_syntax_file('Packages/Mediawiker/Mediawiki.tmLanguage')
