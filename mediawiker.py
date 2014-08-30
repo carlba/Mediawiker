@@ -15,12 +15,13 @@ import base64
 from hashlib import md5
 import uuid
 
-import templates
+from templates import templates
+
 
 #https://github.com/wbond/sublime_package_control/wiki/Sublime-Text-3-Compatible-Packages
 #http://www.sublimetext.com/docs/2/api_reference.html
 #http://www.sublimetext.com/docs/3/api_reference.html
-#sublime.message_dialog
+
 
 st_version = 2
 if int(sublime.version()) > 3000:
