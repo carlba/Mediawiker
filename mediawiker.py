@@ -15,6 +15,8 @@ import base64
 from hashlib import md5
 import uuid
 
+import templates
+
 #https://github.com/wbond/sublime_package_control/wiki/Sublime-Text-3-Compatible-Packages
 #http://www.sublimetext.com/docs/2/api_reference.html
 #http://www.sublimetext.com/docs/3/api_reference.html
@@ -552,16 +554,7 @@ class MediawikerShowPageCommand(sublime_plugin.TextCommand):
         is_writable, text = mw_get_page_text(sitecon, title)
         if is_writable and not text:
             sublime.status_message('Wiki page %s is not exists. You can create new..' % (title))
-            text = '''This document outlines the procedure needed to set up AutoFS, a package that provides support for automounting removable media or network shares when they are inserted or accessed.
-
-== Installation ==
-
-== Configuration ==
-
-== Troubleshooting and tweaks ==
-
-== See also ==
-'''
+            text = templates.new_page
         if is_writable:
             self.view.erase(edit, sublime.Region(0, self.view.size()))
             self.view.set_syntax_file('Packages/Mediawiker/Mediawiki.tmLanguage')
