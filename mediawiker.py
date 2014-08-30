@@ -17,10 +17,11 @@ import uuid
 
 from templates import templates
 
-
 #https://github.com/wbond/sublime_package_control/wiki/Sublime-Text-3-Compatible-Packages
 #http://www.sublimetext.com/docs/2/api_reference.html
 #http://www.sublimetext.com/docs/3/api_reference.html
+
+sys.path.append(dirname(__file__))
 
 
 st_version = 2
